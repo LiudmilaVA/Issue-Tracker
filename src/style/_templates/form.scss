@@ -1,0 +1,141 @@
+.form {
+
+    &-issue {
+        margin-bottom: 35px;
+    }
+
+    &-field {
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    &-label {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        display: block;
+        @include font(16, 20, 500);
+        color: $primary;
+        transition: all .2s ease-in;
+
+        &.active {
+            top: 3px;
+            @include font(12, 16);
+        }
+    }
+
+    &-input {
+        display: block;
+        padding: 18px 15px 6px;
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        @include font(16, 20, 500);
+        border: 1px solid $muted;
+        border-radius: 3px;
+        box-sizing: border-box;
+        transition: all .2s ease-in-out;
+        outline: none;
+
+        &:focus,
+        &:active {
+            transition: all .2s ease-in;
+            border-color: $primary;
+
+            & + .form-label {
+                top: 3px;
+                @include font(12, 16);
+            }
+        }
+    }
+
+    &-textarea {
+        height: 100%;
+    
+        & .form-input {
+          height: 100px;
+          border-radius: 3px;
+        }
+    }
+
+    // ---   custom mark for checkbox
+  &-checkmark {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-weight: normal;
+    user-select: none;
+
+    & input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    & .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    & input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  // --- checkbox custom
+  &-checkbox {
+    @include font(12, 15, 400);
+    color: $black;
+
+    &-label {
+      color: $black;
+    }
+
+    & .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      border: 1px solid $dark;
+      border-radius: 3px;
+      transition: all .2s ease-in-out;
+    }
+
+    & input:checked ~ .checkmark {
+      border-color: $primary;
+      background-color: $primary;
+      transition: all .2s ease-in-out;
+    }
+
+    & .checkmark:after {
+      top: calc(100% / 2 - 8px);
+      left: calc(100% / 2 - 3px);
+      width: 7px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}

@@ -1,0 +1,11 @@
+@mixin font($fz, $lh, $fw: 300) {
+    font-weight: $fw;
+    font-size: #{$fz}px;
+    line-height: #{$lh}px;
+  }
+  
+  @mixin mgCenter() {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

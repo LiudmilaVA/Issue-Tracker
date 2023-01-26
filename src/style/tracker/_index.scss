@@ -1,0 +1,22 @@
+.tracker {
+    margin: 40px 0;
+
+    & .container {
+        padding: 30px;
+        min-height: 300px;
+        border-radius: 6px;
+        background-color: #ebecf0;
+        overflow: auto;    
+    }
+
+    &-header {
+        margin-bottom: 35px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-list {
+        margin-bottom: 30px;
+    }
+}

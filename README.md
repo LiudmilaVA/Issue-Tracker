@@ -1,5 +1,5 @@
 # Issue-Tracker
 
-npm i
-npm run server
-npm start
+# npm i
+# npm run server
+# npm start
